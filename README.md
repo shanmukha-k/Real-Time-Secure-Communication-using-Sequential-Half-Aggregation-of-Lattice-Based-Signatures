@@ -68,7 +68,8 @@ A secure communication channel using sequential half-aggregation of lattice-base
 
 ### License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+This project is licensed under a custom license. See `LICENSE` for more information.
+
 
 ### Contact
 
