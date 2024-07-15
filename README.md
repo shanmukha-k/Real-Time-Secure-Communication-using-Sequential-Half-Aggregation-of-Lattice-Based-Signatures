@@ -1,0 +1,1 @@
+# Real-Time-Secure-Communication-using-Sequential-Half-Aggregation-of-Lattice-Based-Signatures
