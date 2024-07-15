@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Communication</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <h1>Secure Communication Channel</h1>
+    <button onclick="generateKey()">Generate Key</button>
+    <br>
+    <input type="text" id="message" placeholder="Enter message">
+    <button onclick="signMessage()">Sign Message</button>
+    <br>
+    <button onclick="aggregateSignatures()">Aggregate Signatures</button>
+    <br>
+    <button onclick="verifySignature()">Verify Signature</button>
+    <br>
+    <button onclick="encryptMessage()">Encrypt Message</button>
+    <br>
+    <button onclick="decryptMessage()">Decrypt Message</button>
+
+    <script>
+        const socket = io();
+
+        function generateKey() {
+            socket.emit('key_generation');
+        }
+
+        function signMessage() {
+            const message = document.getElementById('message').value;
+            socket.emit('sign_message', { message });
+        }
+
+        function aggregateSignatures() {
+            socket.emit('aggregate_signatures', { signatures: [...] });
+        }
+
+        function verifySignature() {
+            socket.emit('verify_signature', { message: ..., signature: ... });
+        }
+
+        function encryptMessage() {
+            const message = document.getElementById('message').value;
+            socket.emit('encrypt_message', { message });
+        }
+
+        function decryptMessage() {
+            socket.emit('decrypt_message', { aes_key: ..., ciphertext: ... });
+        }
+
+        socket.on('key_generated', (data) => {
+            console.log('Key Generated:', data.public_key);
+        });
+
+        socket.on('message_signed', (data) => {
+            console.log('Message Signed:', data.signature);
+        });
+
+        socket.on('aggregated_signature', (data) => {
+            console.log('Aggregated Signature:', data.aggregated_signature);
+        });
+
+        socket.on('signature_verified', (data) => {
+            console.log('Signature Verified:', data.is_valid);
+        });
+
+        socket.on('message_encrypted', (data) => {
+            console.log('Message Encrypted:', data.ciphertext);
+        });
+
+        socket.on('message_decrypted', (data) => {
+            console.log('Message Decrypted:', data.plaintext);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿Key,Issue Type,Parent,Summary,Status,Assignee,Sprint,Start date,Inferred start date,Due date,Inferred due date
+SS3217-3,Epic,,Initial Setup and Requirements Gathering,To Do,,,15-07-2024,15-07-2024,29-07-2024,29-07-2024
+SS3217-4,Task,SS3217-3,Set up project repository and Jira board,To Do,Shanmukh,SS3217 Sprint 1,,15-07-2024,,29-07-2024
+SS3217-5,Task,SS3217-3,Define project requirements,To Do,Sarath Chandra,SS3217 Sprint 1,,15-07-2024,,29-07-2024
+SS3217-6,Task,SS3217-3,Initial research and selection of technologies,To Do,Sarath Chandra,SS3217 Sprint 1,,15-07-2024,,29-07-2024
+SS3217-7,Task,SS3217-3,Weekly review with Supervisor,To Do,,SS3217 Sprint 1,,15-07-2024,,29-07-2024
+SS3217-8,Epic,,Design and Planning,To Do,,,29-07-2024,29-07-2024,12-08-2024,12-08-2024
+SS3217-9,Task,SS3217-8,Design system architecture,To Do,Shanmukh,SS3217 Sprint 2,,29-07-2024,,12-08-2024
+SS3217-10,Task,SS3217-8,Create wireframes and UI mockups,To Do,Sarath Chandra,SS3217 Sprint 2,,29-07-2024,,12-08-2024
+SS3217-11,Task,SS3217-8,Plan key generation and authentication mechanism,To Do,Shanmukh,SS3217 Sprint 2,,29-07-2024,,12-08-2024
+SS3217-12,Task,SS3217-8,Weekly review with Supervisor,To Do,,SS3217 Sprint 2,,29-07-2024,,12-08-2024
+SS3217-13,Task,SS3217-8,Monthly review with Project Coordinator,To Do,,SS3217 Sprint 2,,29-07-2024,,12-08-2024
+SS3217-14,Epic,,Backend Development,To Do,,,12-08-2024,12-08-2024,26-08-2024,26-08-2024
+SS3217-15,Task,SS3217-14,Develop key generation and authentication module,To Do,Sarath Chandra,SS3217 Sprint 3,,12-08-2024,,26-08-2024
+SS3217-16,Task,SS3217-14,Implement server-side logic,To Do,Shanmukh,SS3217 Sprint 3,,12-08-2024,,26-08-2024
+SS3217-17,Task,SS3217-14,Set up database,To Do,Sarath Chandra,SS3217 Sprint 3,,12-08-2024,,26-08-2024
+SS3217-18,Task,SS3217-14,Weekly review with Supervisor,To Do,,SS3217 Sprint 3,,12-08-2024,,26-08-2024
+SS3217-19,Epic,,Frontend Development,To Do,,,26-08-2024,26-08-2024,09-09-2024,09-09-2024
+SS3217-20,Task,SS3217-19,Develop user interface,To Do,Shanmukh,SS3217 Sprint 4,,26-08-2024,,09-09-2024
+SS3217-21,Task,SS3217-19,Integrate frontend with backend,To Do,Sarath Chandra,SS3217 Sprint 4,,26-08-2024,,09-09-2024
+SS3217-22,Task,SS3217-19,Implement real-time communication features,To Do,Shanmukh,SS3217 Sprint 4,,26-08-2024,,09-09-2024
+SS3217-23,Task,SS3217-19,Weekly review with Supervisor,To Do,,SS3217 Sprint 4,,26-08-2024,,09-09-2024
+SS3217-24,Task,SS3217-19,Monthly review with Project Coordinator,To Do,,SS3217 Sprint 4,,26-08-2024,,09-09-2024
+SS3217-25,Epic,,Testing and Debugging,To Do,,,09-09-2024,09-09-2024,23-09-2024,23-09-2024
+SS3217-26,Task,SS3217-25,Conduct unit testing,To Do,Sarath Chandra,SS3217 Sprint 5,,09-09-2024,,23-09-2024
+SS3217-27,Task,SS3217-25,Perform integration testing,To Do,Shanmukh,SS3217 Sprint 5,,09-09-2024,,23-09-2024
+SS3217-28,Task,SS3217-25,Debug issues,To Do,Sarath Chandra,SS3217 Sprint 5,,09-09-2024,,23-09-2024
+SS3217-29,Task,SS3217-25,Weekly review with Supervisor,To Do,,SS3217 Sprint 5,,09-09-2024,,23-09-2024
+SS3217-30,Epic,,Final Integration and Deployment,To Do,,,23-09-2024,23-09-2024,07-10-2024,07-10-2024
+SS3217-31,Task,SS3217-30,Finalize integration,To Do,Shanmukh,SS3217 Sprint 6,,23-09-2024,,07-10-2024
+SS3217-32,Task,SS3217-30,Prepare deployment,To Do,Sarath Chandra,SS3217 Sprint 6,,23-09-2024,,07-10-2024
+SS3217-33,Task,SS3217-30,Conduct user acceptance testing,To Do,Shanmukh,SS3217 Sprint 6,,23-09-2024,,07-10-2024
+SS3217-34,Task,SS3217-30,Weekly review with Supervisor,To Do,,SS3217 Sprint 6,,23-09-2024,,07-10-2024
+SS3217-35,Task,SS3217-30,Monthly review with Project Coordinator,To Do,,SS3217 Sprint 6,,23-09-2024,,07-10-2024
+SS3217-36,Epic,,Documentation and Final Review,To Do,,,07-10-2024,07-10-2024,21-10-2024,21-10-2024
+SS3217-37,Task,SS3217-36,Write project documentation,To Do,Sarath Chandra,SS3217 Sprint 7,,07-10-2024,,21-10-2024
+SS3217-38,Task,SS3217-36,Prepare presentation,To Do,Shanmukh,SS3217 Sprint 7,,07-10-2024,,21-10-2024
+SS3217-39,Task,SS3217-36,Final review with Supervisor and Project Coordinator,To Do,,SS3217 Sprint 7,,07-10-2024,,21-10-2024
