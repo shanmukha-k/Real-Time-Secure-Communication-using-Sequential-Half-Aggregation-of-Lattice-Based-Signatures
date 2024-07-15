@@ -74,7 +74,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 - **Shanmukha Sai Kotamsetti** - [shanmukhasai020504@gmail.com](mailto:shanmukhasai020504@gmail.com)
 - **Sarath Chandra Edubelli** - [sarathchandraedubelli@gmail.com](mailto:sarathchandraedubelli@gmail.com)
-- **Project Link**: [https://github.com/your-username/Secure-Communication](https://github.com/your-username/Secure-Communication)
+- **Project Link**: [https://github.com/your-username/Secure-Communication]([https://github.com/shanmukha-k/Secure-Communicatio](https://github.com/shanmukha-k/Real-Time-Secure-Communication-using-Sequential-Half-Aggregation-of-Lattice-Based-Signatures)
 
 
 
