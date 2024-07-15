@@ -2,7 +2,9 @@
 
 A secure communication channel using sequential half-aggregation of lattice-based signatures. This project ensures the integrity, authenticity, and confidentiality of messages exchanged between users.
 
-https://github.com/shanmukha-k/Real-Time-Secure-Communication-using-Sequential-Half-Aggregation-of-Lattice-Based-Signatures/blob/main/nora-10-fps.gif
+
+![Project Demo](https://github.com/shanmukha-k/Real-Time-Secure-Communication-using-Sequential-Half-Aggregation-of-Lattice-Based-Signatures/blob/main/nora-10-fps.gif)
+
 
 ## Features
 
