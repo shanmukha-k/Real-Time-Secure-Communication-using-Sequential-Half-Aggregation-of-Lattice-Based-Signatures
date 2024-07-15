@@ -33,7 +33,7 @@ A secure communication channel using sequential half-aggregation of lattice-base
 1. Clone the repository:
     ```sh
     git clone (git@github.com:shanmukha-k/Real-Time-Secure-Communication-using-Sequential-Half-Aggregation-of-Lattice-Based-Signatures.git)
-    cd Secure-Communication
+    cd Real-Time-Secure-Communication-using-Sequential-Half-Aggregation-of-Lattice-Based-Signatures
     ```
 
 2. Install dependencies:
