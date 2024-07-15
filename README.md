@@ -73,7 +73,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ### Contact
 
 - **Shanmukha Sai Kotamsetti** - [shanmukhasai020504@gmail.com](mailto:shanmukhasai020504@gmail.com)
-- **Sarath Chandra Edubelli** - .[sarathchandraedubelli@gmail.com](mailto:sarathchandraedubelli@gmail.com)
+- **Sarath Chandra Edubelli** - [sarathchandraedubelli@gmail.com](mailto:sarathchandraedubelli@gmail.com)
 - **Project Link**: [https://github.com/your-username/Secure-Communication](https://github.com/your-username/Secure-Communication)
 
 
