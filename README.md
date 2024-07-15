@@ -57,3 +57,24 @@ A secure communication channel using sequential half-aggregation of lattice-base
 
 ### Project Structure
 
+
+### Contributing
+
+1. Fork the repository.
+2. Create your feature branch: `git checkout -b feature/AmazingFeature`
+3. Commit your changes: `git commit -m 'Add some AmazingFeature'`
+4. Push to the branch: `git push origin feature/AmazingFeature`
+5. Open a pull request.
+
+### License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+### Contact
+
+- **Shanmukha Sai Kotamsetti** - [shanmukhasai020504@gmail.com](mailto:shanmukhasai020504@gmail.com)
+- **Sarath Chandra Edubelli** - .[sarathchandraedubelli@gmail.com](mailto:sarathchandraedubelli@gmail.com)
+- **Project Link**: [https://github.com/your-username/Secure-Communication](https://github.com/your-username/Secure-Communication)
+
+
+
