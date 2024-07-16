@@ -81,5 +81,6 @@ This project is licensed under a custom license. See `LICENSE` for more informat
 - **Sarath Chandra Edubelli** - [sarathchandraedubelli@gmail.com](mailto:sarathchandraedubelli@gmail.com)
 - **Project Link**: [https://github.com/shanmukha-k/Secure Communication](https://github.com/shanmukha-k/Real-Time-Secure-Communication-using-Sequential-Half-Aggregation-of-Lattice-Based-Signatures)
 
-
+## Note
+The project is just started with its principles and prerequisite knowledge.
 
