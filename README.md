@@ -17,20 +17,19 @@ A secure communication channel using sequential half-aggregation of lattice-base
 
 ## Technologies Used
 
-- **Backend**: Node.js, Express.js
+- **Backend**: AWS EC2 Instance
 - **Frontend**: HTML, CSS, JavaScript
-- **WebSockets**: Socket.io
-- **Cryptography**: Node.js crypto module
+- **Cryptography**: crypto module
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js and npm installed on your machine.
+- Create a Ec2 Instance with ssh, http and https port
 
 ### Installation
 
-1. Clone the repository:
+1. Clone the repository to the Ec2 instance:
     ```sh
     git clone https://github.com/shanmukha-k/Real-Time-Secure-Communication-using-Sequential-Half-Aggregation-of-Lattice-Based-Signatures.git
     cd Real-Time-Secure-Communication-using-Sequential-Half-Aggregation-of-Lattice-Based-Signatures
@@ -38,17 +37,17 @@ A secure communication channel using sequential half-aggregation of lattice-base
 
 2. Install dependencies:
     ```sh
-    npm install
+    install required modules
     ```
 
 ### Running the Application
 
 1. Start the server:
     ```sh
-    node server.js
+    sudo python3 SHAS.py
     ```
 
-2. Open `index.html` in your web browser.
+2. Open `index.html` in your web browser using public ip of your Ec2 instance.
 
 ### Usage
 
