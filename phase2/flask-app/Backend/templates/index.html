@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Generation and Signature</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Platypi:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Platypi:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Platypi', serif;
+            margin: 20px;
+            font-size: 14px;
+            padding-bottom: 60px;
+        }
+
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Amrita_Vishwa_Vidyapeetham_-_Logo_Icon.svg/1200px-Amrita_Vishwa_Vidyapeetham_-_Logo_Icon.svg.png') no-repeat center center fixed;
+            background-size: 40%;
+            opacity: 0.07;
+            z-index: -1;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #9c5c6c;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #7c2c44;
+        }
+        button:active {
+            background-color: #995c74;
+        }
+        pre {
+            background-color: rgb(227, 213, 219, 0.3);
+            padding: 15px;
+            border: 1px solid black;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            max-width: 100%;
+            overflow-wrap: break-word;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: auto;
+        }
+        .Heading {
+            font-family: "Cinzel", serif;
+            font-weight: 250;
+            color: #7c2c44;
+            font-size: 50px;
+            text-align: center;
+        }
+        .main, .main1 {
+            display: flex;
+            justify-content: center;
+        }
+        .reset-button {
+            border: 1px solid black;
+            color: black;
+            background-color: white;
+            margin-bottom: 2%;
+        }
+        .reset-button:hover {
+            color: white;
+        }
+        #resetFooter {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .marquee {
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .copyright {
+            margin: auto;
+            font-size: 14px;
+            color: #333;
+        }
+        textarea, input {
+            background-color: rgb(227, 213, 219, 0.3);
+            cursor: text;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid black;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea:focus, input:focus {
+            border-color: #66afe9;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee">
+        <marquee behavior="scroll" direction="left" scrollamount="15">
+            This is just for Demonstration purpose.
+        </marquee>
+    </div>
+    <div class="background-overlay"></div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Amrita_Vishwa_Vidyapeetham_-_Logo_Icon.svg/1200px-Amrita_Vishwa_Vidyapeetham_-_Logo_Icon.svg.png" alt="Logo" class="logo">
+    
+    <div class="Heading">
+        <b>Amrita Vishwa Vidyapeetham</b>
+    </div>
+
+    <div class="main">
+        <h1>Key Generation and Signature</h1>
+    </div>    
+    <div class="main1">
+        <button onclick="generateKeys()">Generate Keys</button>
+        <button onclick="generateSignature()">Generate Signature</button>
+        <button onclick="verifySignature()">Verify Signature</button>
+    </div>
+    <h2>Secret Key:</h2>
+    <pre id="secretKey"></pre>
+    <h2>Public Key:</h2>
+    <pre id="publicKey"></pre>
+    <h2>Enter your message:</h2>
+    <form id="messageForm">
+        <textarea id="msg" name="message" rows="4" cols="50"></textarea><br><br>
+        <button type="button" onclick="saveMessage()">Submit</button>
+    </form>
+    <h2>Signature:</h2>
+    <pre id="signature"></pre>
+    <h2>Verification Result:</h2>
+    <pre id="verificationResult"></pre>
+
+    <div><button id="resetFooter" class="reset-button" onclick="resetOutputs()">Reset</button></div>
+
+    <script>
+
+        function formatArray(arr) {
+            const maxLines = 6;
+            const maxLineLength = 40;
+            const numElements = arr.length;
+
+            if (numElements <= maxLines * maxLineLength) {
+                return arr.join(' ');
+            }
+
+            const startElements = arr.slice(0, maxLineLength).join(' ');
+            const endElements = arr.slice(-maxLineLength).join(' ');
+
+            const middleDots = '................\n'.repeat(numElements > maxLineLength * 2 ? 1 : 0);
+
+            return [
+                startElements,
+                arr.slice(maxLineLength, maxLineLength * 2).join(' '),
+                middleDots,
+                arr.slice(-maxLineLength * 2, -maxLineLength).join(' '),
+                endElements
+            ].filter(line => line).join('\n');
+        }
+
+        function generateKeys() {
+            fetch('/generate_keys')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('secretKey').innerText = formatArray(data.secret_key);
+                    document.getElementById('publicKey').innerText = formatArray(data.public_key);
+                })
+                .catch(error => console.error('Error:', error));
+                showResetButton();
+        }
+
+        function saveMessage() {
+    const message = document.getElementById('msg').value;
+
+    if (message.trim() === "") {
+        alert("Message cannot be empty!");
+        return;
+    }
+
+    fetch('/save_message', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: message })
+    }).then(response => response.json())
+      .then(data => {
+        if (data.success) {
+            alert("Message saved successfully");
+        } else {
+            alert("Error: " + data.error);
+        }
+    }).catch(error => {
+        alert("Request failed: " + error);
+    });
+    
+    showResetButton();
+}
+
+
+        function generateSignature() {
+            fetch('/generate_signature')
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    document.getElementById('signature').innerText = data.error;
+                } else {
+                    document.getElementById('signature').innerText = formatArray(data.signature);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+            showResetButton();
+        }
+
+        function verifySignature() {
+    fetch('/verify_signature', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            signature: document.getElementById('signature').innerText
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.json().then(data => {
+                throw new Error(data.reason || 'Verification failed due to manipulation.');
+            });
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.verification === 'Success') {
+            document.getElementById('verificationResult').innerText = 'Signature verification succeeded!';
+            document.getElementById('verificationResult').style.color = 'green';
+        }
+    })
+    .catch(error => {
+        document.getElementById('verificationResult').innerText = `Signature verification failed: ${error.message}`;
+        document.getElementById('verificationResult').style.color = 'red';
+    });
+
+    showResetButton();
+}
+
+
+        function resetOutputs() {
+            document.getElementById('secretKey').innerText = '';
+            document.getElementById('publicKey').innerText = '';
+            document.getElementById('msg').value = '';
+            document.getElementById('signature').innerText = '';
+            document.getElementById('verificationResult').innerText = '';
+            document.getElementById('resetFooter').style.display = 'none';
+        }
+
+        function showResetButton() {
+            document.getElementById('resetFooter').style.display = 'block';
+        }
+    </script>
+
+    <footer>
+        <p class="copyright">&copy; 2024 K. Shanmukha Sai & E. Sarath Chandra. All rights reserved.</p>
+    </footer>
+</body>
+</html>
