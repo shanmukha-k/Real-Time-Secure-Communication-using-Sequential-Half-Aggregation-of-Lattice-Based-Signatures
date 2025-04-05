@@ -129,6 +129,25 @@ def check_norm(z_dict, B):
         if norm_zi > B:
             return jsonify({'error': f'Some value exceeds Norm:'}), 400
 
+def load_previous_signature(filename):
+    if not os.path.exists(filename):
+        print("You are the first signer!!")
+        print("Initialized the values with σ0 = (0, 0)")
+        # Return initial values (0,0) for first signature
+        return np.zeros(ell + k, dtype=int), np.zeros(ell + k, dtype=int)
+
+    with open(filename, 'r') as file:
+        data = list(map(int, file.read().split()))
+        print("Loaded the previous signature successfully")
+    
+    if len(data) < 2 * (ell + k):
+        raise ValueError("Signature file does not contain enough data.")
+    
+    u_i = np.array(data[:ell + k], dtype=int)
+    z_i = np.array(data[ell + k:], dtype=int)
+    
+    return u_i, z_i
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -159,26 +178,6 @@ def save_message():
         return jsonify({"success": True})
     except Exception as e:
         return jsonify({"success": False, "error": str(e)})
-
-
-def load_previous_signature(filename):
-    if not os.path.exists(filename):
-        print("You are the first signer!!")
-        print("Initialized the values with σ0 = (0, 0)")
-        # Return initial values (0,0) for first signature
-        return np.zeros(ell + k, dtype=int), np.zeros(ell + k, dtype=int)
-
-    with open(filename, 'r') as file:
-        data = list(map(int, file.read().split()))
-        print("Loaded the previous signature successfully")
-    
-    if len(data) < 2 * (ell + k):
-        raise ValueError("Signature file does not contain enough data.")
-    
-    u_i = np.array(data[:ell + k], dtype=int)
-    z_i = np.array(data[ell + k:], dtype=int)
-    
-    return u_i, z_i
 
 @app.route('/generate_signature')
 def generate_signature():
@@ -272,7 +271,7 @@ def verify_signature():
         return jsonify({'error': f'Failed to load previous values: {str(e)}'}), 400
         
     # Example: Extract the pair from row 2 (third row, 0-based index)
-    count = 3
+    count = 1
     extracted_pairs = extract_from_end(L_i, count)
 
     for i, (t_i, m_i) in enumerate(extracted_pairs):
@@ -294,4 +293,4 @@ def verify_signature():
     return jsonify({'verification': 'Success'}), 200
 
 if __name__ == '__main__':
-    app.run(debug=True, port=80)
+    app.run(debug=True, ssl_context=('certs/server.crt', 'certs/server.key'), port=5000)
