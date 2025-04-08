@@ -1,4 +1,4 @@
-# Secure Communication
+# Real Time Secure Communication using Sequential Half Aggregation of Latice Based Signatures
 
 A secure communication channel using sequential half-aggregation of lattice-based signatures. This project ensures the integrity, authenticity, and confidentiality of messages exchanged between users.
 
