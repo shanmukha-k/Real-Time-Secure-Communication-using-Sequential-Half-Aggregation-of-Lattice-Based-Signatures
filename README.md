@@ -4,6 +4,7 @@ A secure communication channel using sequential half-aggregation of lattice-base
 
 
 ![Project Demo](https://github.com/user-attachments/assets/20947fe2-b120-4514-9eea-1022a532a65f)
+![](https://github.com/user-attachments/assets/551b90fb-b158-46c5-82a5-3e0fd0da8c0e)
 
 
 ## Features
